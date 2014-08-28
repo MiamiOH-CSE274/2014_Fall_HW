@@ -9,3 +9,5 @@ Goals
 1. Eat lunch
 2. Do a hello world
 3. Don't let students expect anything
+
+We added more words that I didn' see
