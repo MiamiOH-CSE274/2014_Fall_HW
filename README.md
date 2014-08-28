@@ -3,6 +3,10 @@
 
 Practice using github to checkout and submit projects
 
+Warning!
+--------
+The license has changed.  Please take note.
+
 Goals
 -----
 
