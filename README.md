@@ -3,6 +3,9 @@
 
 Practice using github to checkout and submit projects
 
+Warning
+-------
+License file has changed.
 
 Goals
 -----
