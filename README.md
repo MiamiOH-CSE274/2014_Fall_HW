@@ -1,7 +1,7 @@
 2014_Fall_HW
 ============
 
-Practice using github to checkout and submit projects
+Practice using git and github to checkout and submit projects
 
 Goals
 -----
