@@ -3,6 +3,8 @@
 
 Practice using github to checkout and submit projects
 
+License terms have changed. Be careul.
+
 Goals
 -----
 1. Don't fall asleep
