@@ -14,4 +14,4 @@ Goals
 
 1. Eat Lunch
 2. Do a "Hello World"
-3. Running after class
+3. Go running after class
