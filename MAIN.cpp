@@ -4,13 +4,15 @@
 
 #include <iostream>
 #include "foo.h" //Quotes around file name means look in the same folder as this copy of file.
-
+#include "helloWorld.h"
 // Declaration of foo moved to foo.h header file!!
 
 
 int main(void){
-	
-	std::cout << "Hello World! " << foo(5,7) << std::endl;
+	helloWorld h;
+	std::cout << h.doHelloWorld() << std::endl;
+
+	//std::cout << "Hello World! " << foo(5,7) << std::endl;
 	
 	/**
 	//cout is like System.out
