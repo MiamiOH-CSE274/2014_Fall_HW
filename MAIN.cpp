@@ -9,8 +9,15 @@
 
 
 int main(void){
-	helloWorld h;
-	std::cout << h.doHelloWorld() << std::endl;
+	
+	std::string myString = "This is a test string!";
+	std::cout << myString.size() << std::endl;
+	std::cout << myString[1] << std::endl;
+	std::cout << myString.substr(1,3) << std::endl;
+
+	
+	//helloWorld h;
+	//std::cout << h.doHelloWorld() << std::endl;
 
 	//std::cout << "Hello World! " << foo(5,7) << std::endl;
 	
