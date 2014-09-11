@@ -7,64 +7,80 @@
 // Our error occurred when the file was not in the same folder as this cpp file.
 #include "helloworld.h"
 
-int foo(int x){
-	int y = 0;
-	if (x == 0){
-		return 0;
-	} else {
-		return 1 + foo(x - 1);
-	}
-}
-
-// arrays can be treated like arrays in Java, but they are not the same
-// array pointer
-int* foo2(int x ){
-	int* myArray = new int[x];
-	for(int i = 0; i < x; i++){
-		myArray[i] = i*i;
-	}
-}
 
 int main(void){
+	/*
+	// Whenever you declare an array, whether static or dynamic, the type
+	// is always a pointer
+	// Declare and allocate
+	int myInts_size = 2;
+	int myInts[2];
 	
-	//std::cout << "Hello World!" << std::endl << foo(5, 7) << std::endl;
-
-	//Declared the instance of the class (called variable h) - do not have to use "new"
-	//as in Java - you can use the same syntax as "int a;"
-	//helloworld h;
-				//take object h and call one of its methods (like myObject.doSomething();)
-	//std::cout << h.doHelloWorld() <<std::endl;
+	int myDoubles_size = 3;
+	double* myDoubles = new double[3];
 	
-	// a and b are local variables - they appear when function begins and die when function ends
-	// local vars = STATICALLY ALLOCATED
-	int a = 5;
-	int b = 10;
+	// Initialize 
+	for(int i = 0; i < 2; i++){
+		myInts[i] = 2*i;
+	}
+	for(int i = 0; i < 3; i++){
+		myDoubles[i] = (i + 1)/ 3.0;
+	}
 
-	// DYNAMICALLY ALLOCATED variables - still want them to be around after function ends
-	// variables outlive the function in which it was created - use "new"
-	// new returns the ADDRESS of the thing it made.
-	// have not yet initialized - it exists in memory, but has no value
-	int* a2 = new int;
-	float* b2 = new float;
+	// Print them out
+	for(int i = 0; i < 2; i++){
+		std::cout << myInts[i] << ", " << &myInts[i] << std::endl;
+	}
+	for(int i = 0; i < 3; i++){
+		std::cout << myDoubles[i] << ", " << &myDoubles[i] << std::endl;
+	}
 
-	int* addr_of_a = &a;
-	int** addr_of_a2 = &a2; // address of the address of a2 (the address of int*)
+	std::cout << myInts[-1] << ", " << &myInts[-1] << std::endl;
+	std::cout << myInts[5] << ", " << &myInts[5] << std::endl;
 
-	// * here is the dereference operator - "got to that address and get me the value of that variable"
-	std::cout << *a2 << std::endl;
+	int* p = &myInts[0];
+	for(int i = 0; i < myInts_size; i++){
+		// Compiler knows you mean go forward by one integer,
+		// so it goes forward in memory by 4 => pointer arithmetic
+		// can also replace "p" with "myInts"
+		std::cout << *(p + i) << ", " << (p + i) << std::endl;
+	}
 
-	std::cout << new int << std::endl;
-	std::cout << new float << std::endl;
+	char* myString = "Hello, World!";
+	int i = 0;
+	while(myString[i] != '\0'){
+		std::cout << myString[i] << ", " << (int)myString[i] << std::endl;
+		i++;
+	}
 
+	//std::cout << main << std::endl;
 
-	std::cout << foo(a) << std::endl;
-	std:: cout << a << std::endl;
+	// Can reuse i here because this i is local to the for loop
+	// You create a new local scope each time you have {}
+	// Based on which block they are in.
+	// If you print i in loop, it will first look in the current block,
+	// if it does not find it there, it will look up to the next block, etc.
+	for(int i = 0; i < 10; i++){
+		std::cout << *((int*)myString+i) << std::endl;
+	}
+	*/
 
-	// & is the "address of" operator
-	std::cout << &a << std::endl;
-	std::cout << &b << std::endl;
-	// sizeof() is an OPERATOR, not a function
-	std::cout << sizeof(float) << std::endl;
-	
+	int x = 15; // 0000000000000001111 in binary
+	std::cout << x % 10 << std::endl;
+
+	// Shift operators (right shift followed by left shift)
+	// Very efficient for multiplying and dividing by two
+	std::cout << (x>>1) << std::endl;
+	std::cout << (x<<1) << std::endl;
+
+	int z = 1;
+	int y = x & z; // 1111 & 0001 // bitwise and
+	int q = x | z; // bitwise or
+	int r = ~x; // bitwise not
+
+	// 0 means "everything is normal"
+	// >0 means "okay, but I want to tell you something..."
+	// <0 means "something bad I need to tell you about..."
+	return 0;
 }
 
