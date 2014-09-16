@@ -1,3 +1,8 @@
 int foo(int n){
-	return n + 2;
+	if( n == 0){
+		return 0;
+	}
+	else{
+		return 1 + foo(n-1);
+	}
 }

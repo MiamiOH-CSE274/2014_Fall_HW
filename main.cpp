@@ -32,6 +32,29 @@ int main(void){
 
 	std::cout << "Printing the answer to the foo function: " << foo(5) << std::endl;
 
+	//working with HelloWorld.cpp and HelloWorld.h
 	helloWorld h;
 	std::cout << h.doHelloWorld() << std::endl;
+
+	//memory demonstration:
+
+	//these variables are statically allocated
+	int d = 5;
+	int e = 10;
+
+	//these variables are dynamically allocated (a variable that outlives its function)
+	int* d2 = new int; // new returns the ADDRESS of the thing it made
+	float* e2 = new float; //int* or float* allows you to hold the address of an int or float
+
+	std::cout << new int << std::endl;
+	std::cout << foo(d) << std::endl;
+
+	std::cout << d << std::endl;
+
+	//"Address of" operator
+	std::cout << &d << std::endl;
+	std::cout << &e << std::endl;
+
+	//sizeof is not a function. it is a built in operator 
+	std::cout << sizeof(d) << std::endl;
 }

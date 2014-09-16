@@ -1,7 +1,7 @@
 #include "HelloWorld.h"
 
 helloWorld::helloWorld(){
-	whichLanguage =1;
+	whichLanguage = 0;
 }
 
 
